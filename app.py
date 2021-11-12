@@ -5,7 +5,7 @@ from flask import request,render_template,redirect,url_for,send_file
 import os
 from docx2pdf import convert
 from subprocess import  Popen
-LIBRE_OFFICE = soffice.exe
+LIBRE_OFFICE = soffice
 import subprocess
 
 #import win32com.client
