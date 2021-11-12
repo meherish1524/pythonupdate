@@ -5,7 +5,7 @@ from flask import request,render_template,redirect,url_for,send_file
 import os
 from docx2pdf import convert
 from subprocess import  Popen
-LIBRE_OFFICE = soffice
+
 import subprocess
 
 #import win32com.client
@@ -34,9 +34,9 @@ def index():
         #return send_file(file.filename, as_attachment=True)
         wdFormatPDF = 17
         cmd = 'libreoffice --convert-to pdf'.split() + [file.filename]
-        p = Popen([LIBRE_OFFICE, '--headless', '--convert-to', 'pdf', '--outdir',
+        p = Popen(["soffice.exe", '--headless', '--convert-to', 'pdf', '--outdir',
                r"", file.filename])
-        print([LIBRE_OFFICE, '--convert-to', 'pdf', file.filename])
+        print(["soffice.exe", '--convert-to', 'pdf', file.filename])
         p.communicate()
 
 
